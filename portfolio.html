@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Varsha P Seervi • Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Varsha P Seervi — Computer Engineering student. UI/UX Intern, Web Developer, and ML enthusiast. Projects: Fruit Classifier (CNN), Expense Tracker, Password Generator." />
+    <meta name="author" content="Varsha P Seervi" />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <meta property="og:title" content="Varsha P Seervi • Portfolio" />
+    <meta property="og:description" content="Computer Engineering student • UI/UX • Web Dev • ML" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="preview.png" />
+    <meta property="og:url" content="" />
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Varsha P Seervi",
+    "jobTitle": "Computer Engineering Student",
+    "email": "varshaseervip07@gmail.com",
+    "url": "",
+    "sameAs": [
+      "http://www.linkedin.com/in/varsha-seervi-7232ba265",
+      "",
+      ""
+    ],
+    "knowsAbout": ["Java", "Python", "JavaScript", "HTML", "CSS", "SQL", "ReactJS", "Tailwind CSS", "Bootstrap", "Figma", "Blender", "Git", "Firebase", "Docker"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Presidency University, Bengaluru"
+    }
+  }
+  </script>
+    <style>
+        :root {
+            --bg: #0b0c10;
+            --panel: #111218;
+            --soft: #171923;
+            --text: #e5e7eb;
+            --muted: #a3a8b3;
+            --brand: #0ea5e9;
+            --brand-2: #22d3ee;
+            --accent: #a78bfa;
+            --ring: rgba(14, 165, 233, .35);
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 18px;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f8fafc;
+                --panel: #ffffff;
+                --soft: #f1f5f9;
+                --text: #0f172a;
+                --muted: #475569;
+                --ring: rgba(2, 132, 199, .2);
+                --shadow: 0 10px 30px rgba(2, 6, 23, .08);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+            background: radial-gradient(1200px 600px at 20% -10%, rgba(14, 165, 233, .25), transparent),
+                radial-gradient(1000px 500px at 120% 20%, rgba(167, 139, 250, .2), transparent), var(--bg);
+            color: var(--text);
+            letter-spacing: .2px;
+        }
+
+        a {
+            color: var(--brand);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: saturate(1.2) blur(8px);
+            background: linear-gradient(180deg, rgba(0, 0, 0, .25), transparent);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 24px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(148, 163, 184, .15);
+            background: color-mix(in hsl, var(--panel) 90%, transparent);
+            box-shadow: var(--shadow);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+        }
+
+        .brand .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--brand), var(--accent));
+            box-shadow: 0 0 0 4px var(--ring);
+        }
+
+        .nav a.btn {
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--brand), var(--accent));
+            color: white;
+            font-weight: 600;
+            border: none;
+            box-shadow: var(--shadow);
+        }
+
+        .nav a.btn:hover {
+            filter: brightness(1.1);
+            text-decoration: none;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 32px;
+            align-items: center;
+            padding: 48px 0 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 4vw, 44px);
+            margin: 0 0 8px;
+            letter-spacing: .4px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: clamp(14px, 2vw, 18px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, .15), rgba(167, 139, 250, .18));
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, .25);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid rgba(148, 163, 184, .15);
+            border-radius: var(--radius);
+            padding: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        section {
+            margin: 32px 0;
+        }
+
+        section h2 {
+            font-size: 22px;
+            margin: 0 0 14px;
+            font-weight: 800;
+            letter-spacing: .4px;
+        }
+
+        .list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .item {
+            padding: 16px;
+            background: var(--panel);
+            border: 1px solid rgba(148, 163, 184, .15);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .item h3 {
+            margin: 0 0 6px;
+            font-size: 18px;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            padding: 6px 10px;
+            font-size: 12px;
+            border-radius: 999px;
+            background: var(--soft);
+            color: var(--muted);
+            border: 1px solid rgba(148, 163, 184, .18);
+        }
+
+        .bullets {
+            margin: 8px 0 0 18px;
+        }
+
+        footer {
+            margin: 48px 0 24px;
+            color: var(--muted);
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav" aria-label="Primary">
+                <div class="brand"><span class="dot"></span><span>Varsha P Seervi</span></div>
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+                    <a class="btn" href="#projects">Projects</a>
+                    <a class="btn" href="#skills">Skills</a>
+                    <a class="btn" href="#experience">Experience</a>
+                    <a class="btn" href="#education">Education</a>
+                    <a class="btn" href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero" id="about">
+            <div>
+                <span class="badge">Computer Engineering • Web Dev • UI/UX • ML</span>
+                <h1>Hi, I'm Varsha — I design and build delightful, performant, user‑centric software.</h1>
+                <p class="subtitle">UI/UX Design Intern at Scanpick (Jun–Aug 2024). Skilled in Java, Python, JavaScript,
+                    React, and Tailwind. Exploring Machine Learning and building polished web apps.</p>
+                <div class="grid-2" style="margin-top:16px">
+                    <div class="card">
+                        <strong>Currently</strong>
+                        <p style="margin:.35rem 0 0">B.E. in Computer Engineering @ Presidency University (CGPA
+                            8.83/10).</p>
+                    </div>
+                    <div class="card">
+                        <strong>Open to</strong>
+                        <p style="margin:.35rem 0 0">Internships in Web Development / Frontend • ML projects • UI/UX.
+                        </p>
+                    </div>
+                </div>
+                <div class="tags" style="margin-top:14px">
+                    <span class="tag">Bengaluru, India</span>
+                    <span class="tag">Available for remote</span>
+                </div>
+            </div>
+            <div class="card">
+                <h2 style="margin-top:0">Contact</h2>
+                <div class="list">
+                    <div>
+                        <strong>Email:</strong> <a href="mailto:varshaseervip07@gmail.com">varshaseervip07@gmail.com</a>
+                    </div>
+                    <div>
+                        <strong>Phone:</strong> <a href="tel:+919483941880">+91 94839 41880</a>
+                    </div>
+                    <div>
+                        <strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/varsha-seervi-7232ba265"
+                            target="_blank" rel="noopener">linkedin.com/in/varsha-seervi-7232ba265</a>
+                    </div>
+                    <div>
+                        <strong>GitHub:</strong> <a href="https://github.com/VRSH0704" target="_blank"
+                            rel="noopener">github.com/VRSH0704</a>
+                    </div>
+                    <div>
+                        <strong>Resume (PDF):</strong>
+                        <a href="Varsha_P_Seervi_resume.pdf" target="_blank">Download</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="grid-2">
+                <div class="item">
+                    <h3>Programming</h3>
+                    <p class="meta">Java (DSA), Python, JavaScript, HTML, CSS, SQL</p>
+                    <div class="tags">
+                        <span class="tag">OOP</span><span class="tag">DSA</span><span class="tag">REST</span><span
+                            class="tag">Git</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <h3>Frameworks & Tools</h3>
+                    <p class="meta">ReactJS, Tailwind CSS, Bootstrap, Firebase, Docker, Figma, Blender, VS Code</p>
+                    <div class="tags">
+                        <span class="tag">UI/UX</span><span class="tag">Prototyping</span><span
+                            class="tag">Responsive</span><span class="tag">Accessibility</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <h3>Subjects</h3>
+                    <p class="meta">Operating Systems, DBMS, Machine Learning, Artificial Intelligence, Neural Networks
+                    </p>
+                </div>
+                <div class="item">
+                    <h3>Soft Skills</h3>
+                    <p class="meta">Leadership, Communication, Team Collaboration, Adaptability, Growth Mindset, Problem
+                        Solving, Creativity</p>
+                </div>
+            </div>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="list">
+                <article class="item">
+                    <h3>UI/UX Design Intern • Scanpick</h3>
+                    <div class="meta">June 2024 – August 2024 • Internship</div>
+                    <ul class="bullets">
+                        <li>Designed intuitive, responsive interfaces in Figma aligned with brand guidelines.</li>
+                        <li>Modeled and optimized 3D assets in Blender to enrich product storytelling.</li>
+                        <li>Partnered with developers to translate prototypes into functional interfaces, boosting
+                            usability.</li>
+                        <li>Conducted feedback sessions and iterated for accessibility and improved UX.</li>
+                    </ul>
+                    <div class="tags"><span class="tag">Figma</span><span class="tag">Blender</span><span
+                            class="tag">Design Systems</span><span class="tag">Accessibility</span></div>
+                </article>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="list">
+                <article class="item">
+                    <h3>Fruit Classifier • Artificial Intelligence</h3>
+                    <div class="meta">TensorFlow/Keras • Fruits-360 dataset (~90,000 images)</div>
+                    <ul class="bullets">
+                        <li>Built a CNN to classify 131 fruit & vegetable classes at 100×100 resolution.</li>
+                        <li>Achieved ~97% training and ~95% validation accuracy via preprocessing & augmentation.</li>
+                        <li>Automated dataset download and preprocessing using KaggleHub for seamless training.</li>
+                        <li>Implemented an evaluation pipeline to test generalization on unseen data.</li>
+                    </ul>
+                    <div class="tags"><span class="tag">TensorFlow</span><span class="tag">Keras</span><span
+                            class="tag">CNN</span><span class="tag">Python</span></div>
+                </article>
+
+                <article class="item">
+                    <h3>Expense Tracker • Web Development</h3>
+                    <div class="meta">HTML • CSS • JavaScript</div>
+                    <ul class="bullets">
+                        <li>Responsive web app to record and monitor daily transactions with category-wise insights.
+                        </li>
+                        <li>Dynamic add/delete transactions with automatic income, expense, and net balance updates.
+                        </li>
+                        <li>Persistent local storage for offline-first usage; no backend required.</li>
+                        <li>Clean, mobile-first UI for seamless multi-device experience.</li>
+                    </ul>
+                    <div class="tags"><span class="tag">LocalStorage</span><span class="tag">Accessibility</span><span
+                            class="tag">Responsive UI</span></div>
+                </article>
+
+                <article class="item">
+                    <h3>Random Password Generator • Python Development</h3>
+                    <div class="meta">CLI • Python standard library</div>
+                    <ul class="bullets">
+                        <li>Generates strong passwords with guaranteed inclusion of upper, lower, digits, and symbols.
+                        </li>
+                        <li>Customizable length, input validation, and character shuffling for unpredictability.</li>
+                        <li>Beginner-friendly CLI prompts and instant output for fast usage.</li>
+                    </ul>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">CLI</span><span
+                            class="tag">Security</span></div>
+                </article>
+            </div>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="list">
+                <article class="item">
+                    <h3>Presidency University, Itgalpura, Rajankunte — Bengaluru, India</h3>
+                    <div class="meta">Bachelor of Computer Engineering • CGPA 8.83/10 • Dec 2022 – May 2026</div>
+                </article>
+            </div>
+        </section>
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="grid-2">
+                <div class="item">
+                    <h3>DSA using Java</h3>
+                    <div class="meta">CodeChef • Dec 2023</div>
+                </div>
+                <div class="item">
+                    <h3>Java Problem Solving</h3>
+                    <div class="meta">CodeChef • May 2023</div>
+                </div>
+                <div class="item">
+                    <h3>Getting Started with ML Algorithms</h3>
+                    <div class="meta">Simplilearn • Nov 2023</div>
+                </div>
+                <div class="item">
+                    <h3>Web Design for Beginners: Build Websites in HTML & CSS</h3>
+                    <div class="meta">Udemy • Dec 2024</div>
+                </div>
+                <div class="item">
+                    <h3>JavaScript for Beginners</h3>
+                    <div class="meta">Simplilearn • Apr 2025</div>
+                </div>
+                <div class="item">
+                    <h3>DSA Skill Assessment</h3>
+                    <div class="meta">Scaler • Apr 2025</div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Get in touch</h2>
+            <div class="item">
+                <p>Whether you have an opportunity, a cool project, or just want to say hi — my inbox is open.</p>
+                <p><strong>Email:</strong> <a href="mailto:varshaseervip07@gmail.com">varshaseervip07@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+919483941880">+91 94839 41880</a></p>
+            </div>
+        </section>
+
+        <footer>
+            © <span id="year"></span> Varsha P Seervi • Built with HTML/CSS.
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
